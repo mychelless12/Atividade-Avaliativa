@@ -62,6 +62,63 @@ class Cachorro{
     print("Enche o bucho");
   }
 }
+#PROVA:
+void main() {
+  ContaBancaria c1 = new ContaBancaria(345,5432,'Mychelle',2054.67);
+  c1.Saque(200);
+  c1.Deposito(300);
+  c1.Transferencia(100);
+  
+  } 
+ class ContaBancaria{
+   int agencia;
+   int conta;
+   String nome;
+   double saldo;
+ 
+   ContaBancaria(int agencia,int conta,String nome,double saldo){
+     this.agencia=agencia;
+     this.conta=conta;
+     this.nome=nome;
+     this.saldo=saldo;
+   }
+ 
+   void SaldoAtual() => print("Saldo Atual:${this.saldo}");
+     
+   
+   
+    void Saque(double dinheiro){
+     
+     if(saldo<dinheiro){
+       print("saldo insuficiente para saque");
+     }
+     else{
+       print("saque concluido");
+       this.saldo= this.saldo - dinheiro;
+       SaldoAtual();
+     }
+     
+      
+    }
+   void Deposito( double dinheiro){
+     this.saldo = this.saldo + dinheiro;
+     SaldoAtual();
+     
+   }
+   void Transferencia(double dinheiro){
+     
+     if(saldo<dinheiro){
+       print("saldo insuficiente para transferencia");
+     }
+     else{
+       print("transferencia concluida");
+       this.saldo= this.saldo - dinheiro;
+       SaldoAtual();
+     }
+     
+   }
+ }
+ 
 
 
 
